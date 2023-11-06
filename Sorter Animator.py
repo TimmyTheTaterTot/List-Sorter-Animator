@@ -57,7 +57,7 @@ class RenderApp:
             self.current_index += 1
             self.sort_one()
             return
-        
+
         # refresh screen
         self.window.after(50, self.sort_one)
 
