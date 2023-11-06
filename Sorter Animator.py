@@ -28,13 +28,13 @@ class RenderApp:
 
     def update(self, frame):
         stime = time.time()
-        bar_width = 1000/len(self.values)
+        bar_width = 1000 / len(self.values)
         for x in range(len(self.values)):
             bar = tk.Frame(
                 master=frame,
                 width=bar_width,
                 height=self.values[x],
-                bg="red" if x==self.current_index else "black",
+                bg="red" if x == self.current_index else "black",
                 highlightbackground="light grey",
                 highlightthickness=1,
             )
