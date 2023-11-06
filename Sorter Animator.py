@@ -8,6 +8,7 @@ class RenderApp:
         self.app_state = None
         self.col_num = 100
         self.app_state = None
+        self.bars = []
 
         self.build_window()
 
@@ -23,6 +24,7 @@ class RenderApp:
                 highlightthickness=1,
             )
             bar.grid(row=0, column=x, sticky="s")
+            self.bars.append(bar)
         etime = stime - time.time()
         return etime
 
@@ -57,6 +59,9 @@ class RenderApp:
     def handle_buttonpress(self):
         if self.app_state == "Ready":
             self.app_state = "Running"
+            for bar in self.bars:
+                bar.destroy()
+            self.bars = []
 
 
 def main():
